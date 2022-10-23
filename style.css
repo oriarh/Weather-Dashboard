@@ -1,0 +1,66 @@
+.jumbotron {
+    background: -webkit-linear-gradient(left,rgb(60, 60, 230),rgb(63, 63, 200),rgb(60, 60, 140));
+    text-align: center;
+}
+
+.textAlign {
+    text-align: center;
+}
+
+.searchButton {
+    width: 250px;
+    margin: 3px 0px;
+    border: none;
+    padding: 5px;
+    color: white;
+    background-color: rgb(134, 134, 247);
+    border-radius: 7px;
+}
+
+.searchHistory {
+    width: 250px;
+    margin: 3px 0px;
+    border: none;
+    padding: 5px;
+    color: black;
+    background-color: lightgray;
+    margin: 15px 0px;
+    list-style: none;
+    text-align: center;
+}
+
+.searchHeading {
+    font-weight: bold;
+}
+
+input {
+    width: 250px;
+    height: 45px;
+    margin: 0.25% 0% 5% 0%;
+    padding-left: 10px;
+}
+
+.column1 {
+    margin-left: 5px;
+}
+
+.fiveDayForecast {
+    background-color: purple;
+    color: white;
+    padding: 10px 0px 0px 10px;
+}
+
+.weatherToday {
+    margin-bottom: 15px;
+    padding-left: 10px;
+    border: 1px solid black;
+}
+
+.column2 {
+    display: none;
+}
+
+.iconSize {  
+    height: 50px;
+    width: 50px;
+}
