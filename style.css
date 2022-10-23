@@ -1,6 +1,7 @@
 .jumbotron {
-    background: -webkit-linear-gradient(left,rgb(60, 60, 230),rgb(63, 63, 200),rgb(60, 60, 140));
+    background: -webkit-linear-gradient(left,rgb(185, 60, 230),rgb(185, 63, 200),rgb(185, 60, 140));
     text-align: center;
+    width: 100%;
 }
 
 .textAlign {
@@ -8,17 +9,17 @@
 }
 
 .searchButton {
-    width: 250px;
+    width: 100%;
     margin: 3px 0px;
     border: none;
     padding: 5px;
     color: white;
-    background-color: rgb(134, 134, 247);
+    background-color: rgb(185, 134, 247);
     border-radius: 7px;
 }
 
 .searchHistory {
-    width: 250px;
+    width: 100%;
     margin: 3px 0px;
     border: none;
     padding: 5px;
@@ -27,27 +28,32 @@
     margin: 15px 0px;
     list-style: none;
     text-align: center;
+    border-radius: 7px;
 }
 
 .searchHeading {
     font-weight: bold;
+    font-size: 28px;
 }
 
 input {
-    width: 250px;
+    width: 100%;
     height: 45px;
     margin: 0.25% 0% 5% 0%;
     padding-left: 10px;
 }
 
 .column1 {
+    display: inline;
     margin-left: 5px;
+    margin-right: 10px;
 }
 
 .fiveDayForecast {
     background-color: purple;
     color: white;
-    padding: 10px 0px 0px 10px;
+    padding: 10px 0px 0px 6px;
+    margin-left: 10px;
 }
 
 .weatherToday {
@@ -63,4 +69,10 @@ input {
 .iconSize {  
     height: 50px;
     width: 50px;
+}
+
+.placeholderText {
+    font-size: 45px;
+    text-align: center;
+    margin:auto;
 }

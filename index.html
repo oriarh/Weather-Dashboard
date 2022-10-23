@@ -15,8 +15,8 @@
     </header>
 
     <div class="container.fluid">
-        <div class="rows d-flex">
-            <div class="col-3 column1">
+        <div class="d-sm-flex">
+            <div class="col-2.5 column1">
                 <h2 class="searchHeading">Search for a city:</h2>
                 <input type="text" name="input" id="input" placeholder="San Diego">
                 <button class="searchButton">Search</button>
@@ -31,7 +31,8 @@
                     <li id="search8"></li>
                 </ul>
             </div>
-            <div class="col-8 column2">
+            <p class=" col-8 placeholderText">Please enter the city name to get the current weather and a 5 day forecast</p>
+            <div class="col-sm-8 column2">
                 <div class="weatherToday">
                     <h2 id="cityName"></h2><img src="" id="iconToday" class="iconSize"/>
                     <p>Temp: <span id="tempToday"></span></p>
@@ -39,15 +40,15 @@
                     <p>Humidity: <span id="humidityToday"></span></p>
                 </div>
                 <h3 id="responseStatus">5-Day Forecast:</h3>
-                <div class="rows d-flex justify-content-between">
-                    <div class=" col-2 fiveDayForecast border">
+                <div class="row d-flex justify-content-between">
+                    <div class=" col-md-2 col-sm-6 fiveDayForecast border">
                         <h5 id="date1"></h5>
                         <img src="" id="iconDay1" class="iconSize"/>
                         <p>Temp: <span id="tempDay1"></span></p>
                         <p>Wind: <span id="windDay1"></span></p>
                         <p>Humidity: <span id="humidityDay1"></span></p>
                     </div>
-                    <div class=" col-2 fiveDayForecast border">
+                    <div class=" col-md-2 col-sm-6 fiveDayForecast border">
                         <h5 id="date2"></h5>
                         <img src="" id="iconDay2" class="iconSize"/>
                         <p>Temp: <span id="tempDay2"></span></p>
@@ -55,7 +56,7 @@
                         <p>Humidity: <span id="humidityDay2"></span></p>
 
                     </div>
-                    <div class=" col-2 fiveDayForecast border">
+                    <div class=" col-md-2 col-sm-6 fiveDayForecast border">
                         <h5 id="date3"></h5>
                         <img src="" id="iconDay3" class="iconSize"/>
                         <p>Temp: <span id="tempDay3"></span></p>
@@ -63,7 +64,7 @@
                         <p>Humidity: <span id="humidityDay3"></span></p>
 
                     </div>
-                    <div class=" col-2 fiveDayForecast border">
+                    <div class=" col-md-2 col-sm-6 fiveDayForecast border">
                         <h5 id="date4"></h5>
                         <img src="" id="iconDay4" class="iconSize"/>
                         <p>Temp: <span id="tempDay4"></span></p>
@@ -71,7 +72,7 @@
                         <p>Humidity: <span id="humidityDay4"></span></p>
 
                     </div>
-                    <div class=" col-2 fiveDayForecast border">
+                    <div class=" col-md-2 col-sm-6 fiveDayForecast border">
                         <h5 id="date5"></h5>
                         <img src="" id="iconDay5" class="iconSize"/>
                         <p>Temp: <span id="tempDay5"></span></p>

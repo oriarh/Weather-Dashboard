@@ -1,6 +1,3 @@
-//ISSUES
-    //When I reload the page, the i becomes 0
-
 var searchButton = document.querySelector (".searchButton");
 var inputBar = document.querySelector("#input");
 var column1 = document.querySelector(".column1");
@@ -17,7 +14,7 @@ for (i=1;i<9;i++) {
     }
 }
 
-//Saves search history to local storage
+//Saves search history to local storage, shows search history by creating elements & calls fetch functions
 var i = 1;
 searchButton.addEventListener ('click',function () {
     localStorage.setItem("search"+i,JSON.stringify(inputBar.value));
@@ -31,10 +28,12 @@ searchButton.addEventListener ('click',function () {
     getCoordinates(geoCode);
     fiveDayForecast(geoCode);
     document.querySelector(".column2").style.display = "block";
+    document.querySelector(".placeholderText").style.display = "none";
     }
 );
 
-//This API gets the Latitude and Longitude of the city being searched for
+//This function gets the Latitude and Longitude of the city being searched for & current weather forecast
+//This function also shows these values to the user using the DOM
 function getCoordinates(geoCode) {
     fetch(geoCode)
     .then(function(response) {
@@ -60,7 +59,8 @@ function getCoordinates(geoCode) {
         })
     };
 
-
+//This function gets the Latitude and Longitude of the city being searched for & five day weather forecast.
+//This function also shows these values to the user using the DOM
 function fiveDayForecast(geoCode) {
     fetch(geoCode)
     .then(function(response) {
