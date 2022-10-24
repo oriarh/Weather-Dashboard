@@ -3,26 +3,45 @@ var inputBar = document.querySelector("#input");
 var column1 = document.querySelector(".column1");
 var cityNameAndDate = document.getElementById("cityName");
 var dateToday = moment().format("MM/DD/YYYY");
+var jelly = []; //This is the array the input value is saved to and this array is saved to local storage
+console.log(jelly.length);
 
-//Retrieves history from local storage
-for (i=1;i<9;i++) {
-    if(localStorage.getItem("search"+i) != null) {
+if(localStorage.getItem("history") != null) {
+    jelly = JSON.parse(localStorage.getItem("history"));
+};
+
+//Retrieves history from local storage and creates history buttons
+for (i=0;i < jelly.length ;i++) {
+    if(localStorage.getItem("history") != null) {
         var searchHistory = document.createElement('li');
-        searchHistory.textContent = JSON.parse(localStorage.getItem("search"+i)); 
+        searchHistory.textContent = jelly[i]; 
         column1.appendChild(searchHistory);
         searchHistory.setAttribute("class","searchHistory");
     }
-}
+};
+
+//When the search history elements are clicked, their weather data is fetched again.
+document.querySelectorAll(".searchHistory").forEach(element => {
+    element.addEventListener ("click", function (event) {
+        console.log (event.target.textContent);
+        var geoCode = "https://api.openweathermap.org/geo/1.0/direct?q="+ event.target.textContent + "&limit=1&appid=bc3b11dfa1ca8da93c5ea23cf8c6d41d";
+        getCoordinates(geoCode);
+        fiveDayForecast(geoCode);
+        document.querySelector(".column2").style.display = "block";
+        document.querySelector(".placeholderText").style.display = "none";
+        cityNameAndDate.textContent = event.target.textContent + " " + "(" + dateToday + ")";
+    })
+});
 
 //Saves search history to local storage, shows search history by creating elements & calls fetch functions
-var i = 1;
-searchButton.addEventListener ('click',function () {
-    localStorage.setItem("search"+i,JSON.stringify(inputBar.value));
+searchButton.addEventListener ('click', function () {
+    jelly.push(inputBar.value);
+    console.log(jelly);
+    localStorage.setItem("history",JSON.stringify(jelly));
     var searchHistory = document.createElement('li');
-    searchHistory.textContent = JSON.parse(localStorage.getItem("search"+i)); 
+    searchHistory.textContent = inputBar.value; 
     column1.appendChild(searchHistory);
     searchHistory.setAttribute("class","searchHistory");
-    i++;
     cityNameAndDate.textContent = inputBar.value + " " + "(" + dateToday + ")";
     var geoCode = "https://api.openweathermap.org/geo/1.0/direct?q="+ inputBar.value + "&limit=1&appid=bc3b11dfa1ca8da93c5ea23cf8c6d41d";
     getCoordinates(geoCode);
