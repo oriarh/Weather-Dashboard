@@ -25,8 +25,7 @@ They can also click those saved buttons to retrieve the weather for that city.
 This web app was built using HTML and CSS, Bootstrap & JQuery.
 
 ## Credits
-UC Berkeley Extension Instructional Staff
-Google Fonts
+UC Berkeley Extension Instructional Staff/
 Bootstrap CDN
 
 ## License
